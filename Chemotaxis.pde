@@ -1,4 +1,4 @@
-chemotaxis[] bacteria = new chemotaxis[50];
+chemotaxis[] bacteria = new chemotaxis[200];
 void setup(){
   size(1000,1000);
   for(int i = 0; i<bacteria.length;i++){
@@ -10,7 +10,7 @@ void draw(){
   background(255);
   for(int i = 0; i<bacteria.length;i++){
     bacteria[i].show();
-    bacteria[i].jitter();
+    bacteria[i].move();
     bacteria[i].towardsMouse();
   }
 }
@@ -22,7 +22,7 @@ class chemotaxis{
     myY = y;
     myC = c;
     }
-  void jitter(){
+  void move(){
     myX = myX + (int)(Math.random()*3)-1;
     myY = myY + (int)(Math.random()*3)-1;
   }
